@@ -20,4 +20,9 @@ class Article extends Model
     public function comments() {
         return $this->hasMany(Comment::class);
     }
+
+    // Realcion de uno a mucho inversa (articles-category)
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
