@@ -32,7 +32,7 @@ return new class extends Migration
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
-                ->onDelete('set null'); // si se elimina un usaurio no quiero que se elimine un articulo
+                ->onDelete('cascade'); // sirve para eliminarel nulo y no nulo
 
             $table->timestamps();
         });
