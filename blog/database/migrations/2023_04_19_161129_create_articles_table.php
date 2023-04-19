@@ -20,14 +20,14 @@ return new class extends Migration
             $table->text('body');
             $table->boolean('status')->default(0);
 
-            //Relaciòn con la tabla users
+            //Relación con la tabla users
             $table->unsignedBigInteger('user_id')->nullable(); // admite valores nulos
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('set null'); // si se elimina un usuario no quiero que se elimine un articulo
 
-            //Relaciòn con la tabla categories
+            //Relación con la tabla categories
             $table->unsignedBigInteger('category_id'); // admite valores nulos
             $table->foreign('category_id')
                 ->references('id')
